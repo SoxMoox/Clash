@@ -545,13 +545,13 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/Direct.list
+    url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/rule/Direct.list
   proxy:
     type: http
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/ProxyLite.list
+    url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/rule/ProxyLite.list
   ai:
     type: http
     interval: 86400
