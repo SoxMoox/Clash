@@ -1,0 +1,884 @@
+proxy-providers:
+  Airport_01:
+    type: http
+    interval: 1800
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: "🟢 直连"
+    url: "https://hongxingdl.love/hxyunvip?token=de21eda356ac17b973a1780f1466d708"
+
+global-ua: clash
+
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+allow-lan: true
+unified-delay: true
+tcp-concurrent: true
+authentication:
+  - "clash:SoxMoox"
+
+geodata-mode: false
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 48
+geo-url:
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/downlond/latest/geosite.dat"
+  mmdb: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/downlond/latest/geoip-lite.metadb"
+  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/downlond/latest/geoip-lite.dat"
+  asn: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/downlond/latest/GeoLite2-ASN.mmdb"
+
+external-controller: 0.0.0.0:9090
+secret: "SoxMoox0513."
+external-ui: "/usr/share/openclash/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+find-process-mode: strict
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+      - 443
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+  force-domain:
+  - "+.netflix.com"
+  - "+.nflxvideo.net"
+  - "+.amazonaws.com"
+  - "+.media.dssott.com"
+  skip-domain:
+  - "+.apple.com"
+  - "Mijia Cloud"
+  - "dlg.io.mi.com"
+  - "+.oray.com"
+  - "+.sunlogin.net"
+  - "+.push.apple.com"
+  parse-pure-ip: true
+
+tun:
+  enable: true
+  stack: mixed
+  device: utun
+  dns-hijack:
+  - 127.0.0.1:53
+  endpoint-independent-nat: true
+  auto-route: false
+  auto-detect-interface: false
+  auto-redirect: false
+  strict-route: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+  - "rule-set:private_domain,cn_domain"
+  - "+.services.googleapis.cn"
+  - "+.xn--ngstr-lra8j.com"
+  - "time.*.com"
+  - "+.pool.ntp.org"
+  - "+.ntp.tencent.com"
+  - "+.ntp1.aliyun.com"
+  - "+.ntp.ntsc.ac.cn"
+  - "+.cn.ntp.org.cn"
+  - "*.lan"
+  - "*.localdomain"
+  - "*.example"
+  - "*.invalid"
+  - "*.localhost"
+  - "*.test"
+  - "*.local"
+  - "*.home.arpa"
+  - "time.*.gov"
+  - "time.*.edu.cn"
+  - "time.*.apple.com"
+  - "time-ios.apple.com"
+  - "time1.*.com"
+  - "time2.*.com"
+  - "time3.*.com"
+  - "time4.*.com"
+  - "time5.*.com"
+  - "time6.*.com"
+  - "time7.*.com"
+  - "ntp.*.com"
+  - "ntp1.*.com"
+  - "ntp2.*.com"
+  - "ntp3.*.com"
+  - "ntp4.*.com"
+  - "ntp5.*.com"
+  - "ntp6.*.com"
+  - "ntp7.*.com"
+  - "*.time.edu.cn"
+  - "*.ntp.org.cn"
+  - "time1.cloud.tencent.com"
+  - "music.163.com"
+  - "*.music.163.com"
+  - "*.126.net"
+  - "musicapi.taihe.com"
+  - "music.taihe.com"
+  - "songsearch.kugou.com"
+  - "trackercdn.kugou.com"
+  - "*.kuwo.cn"
+  - "api-jooxtt.sanook.com"
+  - "api.joox.com"
+  - "joox.com"
+  - "y.qq.com"
+  - "*.y.qq.com"
+  - "streamoc.music.tc.qq.com"
+  - "mobileoc.music.tc.qq.com"
+  - "isure.stream.qqmusic.qq.com"
+  - "l.stream.qqmusic.qq.com"
+  - "aqqmusic.tc.qq.com"
+  - "amobile.music.tc.qq.com"
+  - "*.xiami.com"
+  - "*.music.migu.cn"
+  - "music.migu.cn"
+  - "+.msftconnecttest.com"
+  - "+.msftncsi.com"
+  - "localhost.ptlogin2.qq.com"
+  - "localhost.sec.qq.com"
+  - "+.qq.com"
+  - "+.tencent.com"
+  - "+.srv.nintendo.net"
+  - "*.n.n.srv.nintendo.net"
+  - "+.cdn.nintendo.net"
+  - "+.stun.playstation.net"
+  - "xbox.*.*.microsoft.com"
+  - "*.*.xboxlive.com"
+  - "xbox.*.microsoft.com"
+  - "xnotify.xboxlive.com"
+  - "+.battlenet.com.cn"
+  - "+.wotgame.cn"
+  - "+.wggames.cn"
+  - "+.wowsgame.cn"
+  - "+.wargaming.net"
+  - "proxy.golang.org"
+  - "stun.*.*"
+  - "stun.*.*.*"
+  - "+.stun.*.*"
+  - "+.stun.*.*.*"
+  - "+.stun.*.*.*.*"
+  - "+.stun.*.*.*.*.*"
+  - "heartbeat.belkin.com"
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "*.router.asus.com"
+  - "mesu.apple.com"
+  - "swscan.apple.com"
+  - "swquery.apple.com"
+  - "swdownload.apple.com"
+  - "swcdn.apple.com"
+  - "swdist.apple.com"
+  - "lens.l.google.com"
+  - "stun.l.google.com"
+  - "na.b.g-tun.com"
+  - "+.nflxvideo.net"
+  - "*.square-enix.com"
+  - "*.finalfantasyxiv.com"
+  - "*.ffxiv.com"
+  - "*.ff14.sdo.com"
+  - "ff.dorado.sdo.com"
+  - "*.mcdn.bilivideo.cn"
+  - "+.media.dssott.com"
+  - "shark007.net"
+  - "Mijia Cloud"
+  - "+.cmbchina.com"
+  - "+.cmbimg.com"
+  - "local.adguard.org"
+  - "+.sandai.net"
+  - "+.n0808.com"
+  - "+.uu.163.com"
+  - "ps.res.netease.com"
+  - "+.pub.3gppnetwork.org"
+  - "geosite:category-games"
+  default-nameserver:
+  - 10.0.0.1
+  - 223.5.5.5
+  - 119.29.29.29
+  - 114.114.114.114
+  proxy-server-nameserver:
+  - 10.0.0.1
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - 10.0.0.1
+  - 202.99.224.67
+  - 202.99.224.68
+nameserver-policy:
+  rule-set:private_domin,cn_domain:
+  - 10.0.0.1
+  - 223.5.5.5
+  - 119.29.29.29
+  rule-set:geolocation-!cn:
+  - "https://dns.cloudflare.com/dns-query"
+  - "https://dns.google/dns-query"
+
+pr:
+  type: select
+  proxies: &1
+  - "💥 手动选择"
+  - "♻️ 自动选择"
+  - "🏅 香港自动"
+  - "🥇 美国自动"
+  - "🥈 台湾自动"
+  - "🥉 新加坡自动"
+  - "🔞 日本自动"
+  - "🫧 韩国自动"
+  - "🚧 香港故转"
+  - "🚧 美国故转"
+  - "🚧 日本故转"
+  - "🇭🇰 香港节点"
+  - "🇺🇲 美国节点"
+  - "🇹🇼 台湾节点"
+  - "🇸🇬 新加坡节点"
+  - "🇯🇵 日本节点"
+  - "🇰🇷 韩国节点"
+  - "🇨🇦 加拿大节点"
+  - "🚦 IPV6自动"
+  - "🚥 IPV6节点"
+  - "💯 全部节点"
+  - "🪧 其他节点"
+  - "🚩 中国直连"
+
+proxy-groups:
+- name: "💥 手动选择"
+  type: select
+  proxies:
+  - "♻️ 自动选择"
+  - "🏅 香港自动"
+  - "🥇 美国自动"
+  - "🥈 台湾自动"
+  - "🥉 新加坡自动"
+  - "🔞 日本自动"
+  - "🫧 韩国自动"
+  - "🚧 香港故转"
+  - "🚧 美国故转"
+  - "🚧 日本故转"
+  - "🇭🇰 香港节点"
+  - "🇺🇲 美国节点"
+  - "🇹🇼 台湾节点"
+  - "🇸🇬 新加坡节点"
+  - "🇯🇵 日本节点"
+  - "🇰🇷 韩国节点"
+  - "🇨🇦 加拿大节点"
+  - "🚦 IPV6自动"
+  - "🚥 IPV6节点"
+  - "💯 全部节点"
+  - "🪧 其他节点"
+  - "🚩 中国直连"
+
+proxy-groups:
+- name: "🇭🇰 香港节点"
+  type: select
+  include-all: true
+  filter: "(?i)港|hk|hongkong|hong kong"
+
+- name: "🇹🇼 台湾节点"
+  type: select
+  include-all: true
+  filter: "(?i)台|tw|taiwan"
+
+- name: "🇺🇲 美国节点"
+  type: select
+  include-all: true
+  filter: "(?i)美|us|unitedstates|united states"
+
+- name: "🇸🇬 新加坡节点"
+  type: select
+  include-all: true
+  filter: "(?i)新加坡|sg|singapore"
+
+- name: "🇯🇵 日本节点"
+  type: select
+  include-all: true
+  filter: "(?i)日|jp|japan"
+  
+- name: "🇰🇷 韩国节点"
+  type: select
+  include-all: true
+  filter: "(?i)韩|kr|korea"
+
+- name: "🇨🇦 加拿大节点"
+  type: select
+  include-all: true
+  filter: "(?i)加|ca|canada"
+
+- name: "🚥 IPV6节点"
+  type: select
+  include-all: true
+  filter: "(?i)IPV6|ipv6"
+
+- name: "🪧 其他节点"
+  type: select
+  include-all: true
+  filter: "^((?!(直连|官网|剩余|到期|异常|失败|香港|台湾|日本|韩国|新加坡|加拿大|深|美国)).)*$"
+
+- name: "🚧 香港故转"
+  type: fallback
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(港|HK|(?i)Hongkong))^((?!(台|日|韩|新|深|美)).)*$"
+
+- name: "🚧 台湾故转"
+  type: fallback
+  include-all: true
+  tolerance: 20
+  interval: 180
+  filter: "(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|深|美)).)*$"
+
+- name: "🚧 美国故转"
+  type: fallback
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"
+
+- name: "🚧 日本故转"
+  type: fallback
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"
+
+- name: "♻️ 自动选择"
+  type: url-test
+  include-all: true
+  tolerance: 100
+  interval: 180
+  filter: "^((?!(直连|官网|剩余|到期|异常|失败)).)*$"
+
+- name: "🏅 香港自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(港|HK|(?i)Hongkong))^((?!(台|日|韩|新|深|美)).)*$"
+
+- name: "🥇 美国自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"
+
+- name: "🥈 台湾自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 180
+  filter: "(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|深|美)).)*$"
+
+- name: "🥉 新加坡自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(新加坡|SG|(?i)sg))^((?!(台|日|韩|深|美)).)*$"
+
+- name: "🔞 日本自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"
+
+- name: "🫧 韩国自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?=.*(韩|KR|(?i)korea))^((?!(台|日|新|深|美)).)*$"
+
+- name: "🚦 IPV6自动"
+  type: url-test
+  include-all: true
+  tolerance: 20
+  interval: 300
+  filter: "(?i)IPV6|ipv6"
+
+- name: "💯 全部节点"
+  type: select
+  include-all: true
+
+rule-anchor:
+  ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+  domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+  soxmoox:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+  class:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+
+# 🍎 Apple
+
+proxy-groups:
+- name: "🍎 Apple"
+  type: select
+  proxies: 
+  - "🚩 中国直连"
+  - "💥 手动选择"
+rules:
+- RULE-SET,apple_domain,🍎 Apple
+rule-providers:
+apple_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs
+
+
+# ✨️ ChatGPT
+
+proxy-groups:
+- name: "✨️ ChatGPT"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,ai,✨️ ChatGPT
+rule-providers:
+ai:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.mrs
+
+# 🎉 Gemini
+
+proxy-groups:
+- name: "🎉 Gemini"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,gemini_domain,🎉 Gemini
+- RULE-SET,gemini_ip,🎉 Gemini,no-resolve
+rule-providers:
+gemini_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gemini.mrs
+gemini_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/gemini.mrs
+
+# 🐈‍⬛ GitHub
+
+proxy-groups:
+- name: "🐈‍⬛ GitHub"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,github_domain,🐈‍⬛ GitHub
+rule-providers:
+github_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+
+# 📹 YouTube
+
+proxy-groups:
+- name: "📹 YouTube"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,YouTube,📹 YouTube
+rule-providers:
+youtube_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+
+# 👑 Google
+
+proxy-groups:
+- name: "👑 Google"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,google_domain,👑 Google
+- RULE-SET,google_ip,👑 Google,no-resolve
+rule-providers:
+google_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+google_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+
+# 🖥️️ Microsoft
+
+proxy-groups:
+- name: "🖥️️ Microsoft"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,microsoft_domain,🖥️️ Microsoft
+rule-providers:
+microsoft_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+
+# 🐦 Twitter
+
+proxy-groups:
+- name: "🐦 Twitter"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,twitter_domain,🐦 Twitter
+- RULE-SET,twitter_ip,🐦 Twitter,no-resolve
+rule-providers:
+twitter_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/x.mrs
+twitter_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs
+
+# 📱 TikTok
+
+proxy-groups:
+- name: "📱 TikTok"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,tiktok_domain,📱 TikTok
+rule-providers:
+tiktok_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
+
+# 💚 Whatsapp
+
+proxy-groups:
+- name: "💚 Whatsapp"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,whatsapp_domain,💚 Whatsapp
+- RULE-SET,whatsapp_ip,💚 Whatsapp,no-resolve
+rule-providers:
+whatsapp_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/whatsapp.mrs
+whatsapp_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/whatsapp.mrs
+
+# 🪞 Instagram
+
+proxy-groups:
+- name: "🪞 Instagram"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,instagram_domain,🪞 Instagram
+- RULE-SET,instagram_ip,🪞 Instagram,no-resolve
+rule-providers:
+instagram_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/instagram.mrs
+instagram_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/instagram.mrs
+
+# 🎭 Facebook
+
+proxy-groups:
+- name: "🎭 Facebook"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,facebook_domain,🎭 Facebook
+- RULE-SET,facebook_ip,🎭 Facebook,no-resolve
+rule-providers:
+facebook_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/facebook.mrs
+facebook_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/facebook.mrs
+
+# 📠 Telegram
+
+proxy-groups:
+- name: "📠 Telegram"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,telegram_domain,📠 Telegram
+- RULE-SET,telegram_ip,📠 Telegram,no-resolve
+rule-providers:
+telegram_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+telegram_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+
+# 🎬 NETFLIX
+
+proxy-groups:
+- name: "🎬 NETFLIX"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,netflix_domain,🎬 NETFLIX
+- RULE-SET,netflix_ip,🎬 NETFLIX,no-resolve
+rule-providers:
+netflix_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
+netflix_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
+
+# 🎶 Spotify
+
+proxy-groups:
+- name: "🎶 Spotify"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,spotify_domain,🎶 Spotify
+rule-providers:
+spotify_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs
+
+# 🎮 Steam
+
+proxy-groups:
+- name: "🎮 Steam"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,steam_domain,🎮 Steam
+rule-providers:
+steam_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs
+
+# 💵️ PayPal
+
+proxy-groups:
+- name: "💵️ PayPal"
+  type: select
+  proxies: *1
+rules:
+- RULE-SET,paypal_domain,💵️ PayPal
+rule-providers:
+paypal_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs
+
+# 💥 手动选择
+
+proxy-groups:
+- name: "💥 手动选择"
+  type: select
+  proxies: 
+  - "♻️ 自动选择"
+  - "🏅 香港自动"
+  - "🥇 美国自动"
+  - "🥈 台湾自动"
+  - "🥉 新加坡自动"
+  - "🔞 日本自动"
+  - "🫧 韩国自动"
+  - "🚧 香港故转"
+  - "🚧 美国故转"
+  - "🚧 日本故转"
+  - "🇭🇰 香港节点"
+  - "🇺🇲 美国节点"
+  - "🇹🇼 台湾节点"
+  - "🇸🇬 新加坡节点"
+  - "🇯🇵 日本节点"
+  - "🇰🇷 韩国节点"
+  - "🇨🇦 加拿大节点"
+  - "🚦 IPV6自动"
+  - "🚥 IPV6节点"
+  - "💯 全部节点"
+  - "🪧 其他节点"
+  - "🚩 中国直连"
+rules:
+- "RULE-SET,geolocation-!cn,💥 手动选择"
+- RULE-SET,proxy,💥 手动选择
+- RULE-SET,private_domain,💥 手动选择
+rule-providers:
+private_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+proxy:
+  type: http
+  interval: 86400
+  behavior: classical
+  format: text
+  url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/ProxyLite.list
+
+# 🚩 中国直连
+
+proxies:
+- name: "🚩 中国直连"
+  type: direct
+  udp: true
+rules:
+- RULE-SET,private_domain,🚩 中国直连
+rule-providers:
+private_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+direct:
+  type: http
+  interval: 86400
+  behavior: classical
+  format: text
+  url: https://raw.githubusercontent.com/SoxMoox/Open-clash/refs/heads/main/Direct.list
+
+# ㊙️ 全球直连
+
+proxy-groups:
+- name: "㊙️ 全球直连"
+  type: select
+  proxies: 
+- "🚩 中国直连"
+- "💥 手动选择"
+rules:
+- RULE-SET,cn_domain,㊙️ 全球直连
+- RULE-SET,cn_ip,㊙️ 全球直连
+rule-providers:
+cn_domain:
+  type: http
+  interval: 86400
+  behavior: domain
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+cn_ip:
+  type: http
+  interval: 86400
+  behavior: ipcidr
+  format: mrs
+  url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+
+# 🥅 漏网之鱼
+
+proxy-groups:
+- name: "🥅 漏网之鱼"
+  type: select
+  proxies: *1
+rules:
+- MATCH,🥅 漏网之鱼
