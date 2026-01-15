@@ -1,6 +1,6 @@
 proxy-providers:
   优质服务商:
-    url: "https://ce750fc7197aed99cf51770aa1e00c93.static-media-bkt-shanghai-aliyun-ossapi.com/s?t=ce750fc7197aed99cf51770aa1e00c93.jpg"
+    url: "机场订阅链接"
     type: http
     interval: 86400
     health-check:
@@ -13,7 +13,7 @@ proxy-providers:
       #additional-suffix: "| 后缀"
 
   备用服务商:
-    url: "https://kuajingnote-api01.trafficmanager.net/link/lLhOJNlCeLmtqKVD?clash=1"
+    url: "机场订阅链接"
     type: http
     interval: 86400
     health-check:
