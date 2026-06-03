@@ -1,6 +1,6 @@
 proxy-providers:
   优质服务商:
-    url: "https://bava8u2znaj6bdzzjnfb.wgetcloud.online/link/75d56d1a-3b8a-360d-86c3-6b6cc52b3e9a?target=other"
+    url: "订阅链接"
     type: http
     interval: 86400
     health-check:
